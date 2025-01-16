@@ -183,6 +183,19 @@ footer a:hover {
     filter: none;
 }
 
+.social-icon {
+    width: 20px; /* Set the width */
+    height: 20px; /* Set the height */
+    margin-right: 5px; /* Add space between the icon and text */
+    vertical-align: middle; /* Align the icon with the text */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+    transition: transform 0.2s ease-in-out;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul {

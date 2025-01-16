@@ -196,4 +196,28 @@ footer a:hover {
         width: 100%;
         height: auto;
     }
+    .section {
+        padding: 30px 20px; /* Reduced padding for mobile view */
+    }
+    form {
+        width: 100%; /* Make the form fill the screen width */
+        max-width: 100%; /* Remove max-width constraint on mobile */
+        padding: 15px;
+    }
+    form input,
+    form textarea,
+    form button {
+        font-size: 0.9rem; /* Adjust font size for mobile */
+    }
+    footer {
+        padding: 15px 10px; /* Reduced footer padding */
+    }
+    .social-media {
+        flex-direction: column;
+        gap: 10px; /* Stack icons vertically on mobile */
+    }
+    .social-media img {
+        width: 40px;
+        height: 40px;
+    }
 }

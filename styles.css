@@ -4,6 +4,7 @@ body {
     margin: 0;
     color: #f3d04d;
     background: #111;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 .container {
@@ -14,10 +15,16 @@ body {
 header {
     background: #222;
     padding: 20px 0;
+    position: relative;
 }
 
 header h1 {
     font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+header p {
+    margin: 5px 0;
 }
 
 nav ul {
@@ -25,6 +32,7 @@ nav ul {
     justify-content: center;
     list-style: none;
     padding: 0;
+    margin: 15px 0 0;
 }
 
 nav ul li {
@@ -35,6 +43,12 @@ nav ul li a {
     text-decoration: none;
     color: #f3d04d;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .section {
@@ -56,26 +70,84 @@ nav ul li a {
 
 .gallery-item {
     background: #333;
-    padding: 10px; /* Reduced padding for better image fit */
+    padding: 10px;
     color: #fff;
     border: 1px solid #f3d04d;
-    width: 200px; /* Fixed square container */
-    height: 200px; /* Fixed square container */
+    width: 200px;
+    height: 200px;
     text-align: center;
-    display: flex; /* Center image and text vertically */
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Ensures content fits within the square */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fills the square without distortion */
-    border-radius: 5px; /* Optional rounded corners */
+    object-fit: cover;
+    border-radius: 5px;
 }
 
+blockquote {
+    font-style: italic;
+    color: #f3d04d;
+    background: #222;
+    padding: 20px;
+    border-left: 5px solid #f3d04d;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+blockquote p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 400px;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #f3d04d;
+}
+
+form input,
+form textarea,
+form button {
+    padding: 10px;
+    border: 1px solid #f3d04d;
+    border-radius: 5px;
+    background: #222;
+    color: #f3d04d;
+    font-size: 1rem;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #777;
+}
+
+form button {
+    background: #f3d04d;
+    color: #111;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #fff;
+}
 
 footer {
     background: #222;
@@ -87,4 +159,41 @@ footer {
 footer a {
     color: #f3d04d;
     text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.social-media img:hover {
+    filter: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .gallery {
+        flex-direction: column;
+    }
+    .gallery-item {
+        width: 100%;
+        height: auto;
+    }
 }

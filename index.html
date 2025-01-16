@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lunar Gold Art: Creativity and innovation in art and entertainment. Explore our visual arts, performances, multimedia, and workshops.">
+    <meta name="keywords" content="art, creativity, visual arts, performing arts, multimedia, workshops">
+    <meta name="author" content="Lunar Gold Art">
     <title>Lunar Gold Art</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        
         <div class="container">
             <img src="images/lunar2.png" alt="Lunar Gold Art Logo" style="width: 250px; height: 150px;">
-    
             <h1>Lunar Gold Art</h1>
             <p>Where creativity meets innovation in art and entertainment.</p>
             <nav>
@@ -62,11 +63,21 @@
                 </div>
             </div>
         </section>
-        
 
+        <section id="testimonials" class="section">
+            <h2>What People Say</h2>
+            <blockquote>"Lunar Gold Art brought our vision to life! A truly inspiring team."</blockquote>
+            <p>- Alex Smith</p>
+        </section>
 
         <section id="contact" class="section">
             <h2>Contact Us</h2>
+            <form action="submit_form.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
             <p>Phone/WhatsApp: +260971580718</p>
             <p>Email: <a href="mailto:Lunargoldart@gmail.com">Lunargoldart@gmail.com</a></p>
             <p>Follow us on:
@@ -74,11 +85,20 @@
                 <a href="https://www.instagram.com/lunargoldart/profilecard/?igsh=azd3M3h6MHVpb3dh">Instagram</a> |
                 <a href="https://www.tiktok.com/@lunargoldart?_t=ZM-8t731TwNlws&_r=1">TikTok</a>
             </p>
+            <div class="social-media">
+                <a href="https://www.facebook.com"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com"><img src="images/tiktok-icon.png" alt="TikTok"></a>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Lunar Gold Art. All rights reserved.</p>
     </footer>
+
+    <script>
+        console.log("Welcome to Lunar Gold Art!");
+    </script>
 </body>
 </html>

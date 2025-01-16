@@ -127,6 +127,15 @@ nav ul li a:hover {
     z-index: 1001;
 }
 
+#testimonial-text, #testimonial-author {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#testimonial-text.show, #testimonial-author.show {
+    opacity: 1;
+}
+
 
 blockquote {
     font-style: italic;

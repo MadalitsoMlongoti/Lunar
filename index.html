@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunar Gold Art</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header with Responsive Navigation -->
     <header>
         <div class="container">
-            <img src="images/lunar2.png" alt="Lunar Gold Art Logo" width="250" height="150">
+            <img src="images/lunar2.png" alt="Lunar Gold Art Logo" class="logo">
             <h1>Lunar Gold Art</h1>
             <p>Where creativity meets innovation in art and entertainment.</p>
             <nav>
-                <ul>
+                <div class="menu-icon" id="menu-icon">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
@@ -25,77 +31,112 @@
         </div>
     </header>
 
-    <main>
-        <section id="about" class="section">
-            <h2>About Us</h2>
-            <p>At Lunar Gold Art, we specialize in crafting extraordinary experiences that captivate, inspire, and resonate with audiences worldwide.</p>
-        </section>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Lunar Gold Art</h1>
+            <p>Where creativity meets innovation in art and entertainment.</p>
+            <a href="#about" class="btn">Explore More</a>
+        </div>
+    </section>
 
-        <section id="services" class="section">
-            <h2>Our Services</h2>
-            <ul>
-                <li><strong>Visual Arts:</strong> Transforming imagination into tangible masterpieces.</li>
-                <li><strong>Performing Arts:</strong> Bringing stories to life through theatre, dance, and music.</li>
-                <li><strong>Multimedia Projects:</strong> Immersive experiences using virtual and augmented reality.</li>
-                <li><strong>Workshops and Education:</strong> Inspiring the next generation of artists.</li>
-            </ul>
-        </section>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>At Lunar Gold Art, we specialize in crafting extraordinary experiences that captivate, inspire, and resonate with audiences worldwide.</p>
+    </section>
 
-        <section id="portfolio" class="section">
-            <h2>Portfolio</h2>
-            <!-- Swiper Carousel -->
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/artwork1.jpg" alt="Artwork 1"></div>
-                    <div class="swiper-slide"><img src="images/artwork2.jpg" alt="Artwork 2"></div>
-                    <div class="swiper-slide"><img src="images/artwork3.jpg" alt="Artwork 3"></div>
-                    <div class="swiper-slide"><img src="images/performance1.jpg" alt="Theatre Performance"></div>
-                    <div class="swiper-slide"><img src="images/digitalart.jpg" alt="Digital Artwork"></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <ul>
+            <li><strong>Visual Arts:</strong> Transforming imagination into tangible masterpieces.</li>
+            <li><strong>Performing Arts:</strong> Bringing stories to life through theatre, dance, and music.</li>
+            <li><strong>Multimedia Projects:</strong> Immersive experiences using virtual and augmented reality.</li>
+            <li><strong>Workshops and Education:</strong> Inspiring the next generation of artists.</li>
+        </ul>
+    </section>
+
+    <!-- Portfolio Section with Masonry Grid -->
+    <section id="portfolio" class="section">
+        <h2>Portfolio</h2>
+        <div class="masonry-grid">
+            <div class="masonry-item"><img src="images/artwork1.jpg" alt="Artwork 1"></div>
+            <div class="masonry-item"><img src="images/artwork2.jpg" alt="Artwork 2"></div>
+            <div class="masonry-item"><img src="images/artwork3.jpg" alt="Artwork 3"></div>
+            <div class="masonry-item"><img src="images/performance1.jpg" alt="Theatre Performance"></div>
+            <div class="masonry-item"><img src="images/digitalart.jpg" alt="Digital Artwork"></div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial">
+                <p>"Lunar Gold Art transformed our event with their stunning visuals!"</p>
+                <p><strong>- Client Name</strong></p>
             </div>
-        </section>
+            <div class="testimonial">
+                <p>"Their creativity is unmatched. Highly recommend!"</p>
+                <p><strong>- Another Client</strong></p>
+            </div>
+        </div>
+    </section>
 
-        <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Phone/WhatsApp: <a href="tel:+260971580718">+260971580718</a></p>
-            <p>Email: <a href="mailto:Lunargoldart@gmail.com">Lunargoldart@gmail.com</a></p>
-            <p>Follow us on:
-                <a href="https://www.facebook.com/profile.php?id=100088537986423&mibextid=ZbWKwL">
-                    <img class="social-icon" src="images/facebook-icon.png" aria-label="Facebook">Facebook</a> |
+    <!-- Call-to-Action Section -->
+    <section id="cta" class="section">
+        <h2>Ready to Create Something Amazing?</h2>
+        <a href="#contact" class="cta-btn">Get in Touch</a>
+    </section>
 
-                <a href="https://www.instagram.com/lunargoldart/profilecard/?igsh=azd3M3h6MHVpb3dh">
-                    <img class="social-icon" src="images/instagram-icon.png" aria-label="Instagram">Instagram</a> |
-                
-                    <a href="https://www.tiktok.com/@lunargoldart?_t=ZM-8t731TwNlws&_r=1"> 
-                    <img class="social-icon" src="images/tiktok-icon.png" aria-label="TikTok">TikTok</a>
-            </p>
-        </section>
-    </main>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Phone/WhatsApp: <a href="tel:+260971580718">+260971580718</a></p>
+        <p>Email: <a href="mailto:Lunargoldart@gmail.com">Lunargoldart@gmail.com</a></p>
+        <p>Follow us on:
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </p>
+    </section>
 
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="section">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form id="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Lunar Gold Art. All rights reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Lunar Gold Art. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <a href="#hero" class="back-to-top">Back to Top</a>
+        </div>
     </footer>
 
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- JavaScript -->
     <script>
+        // Hamburger Menu Toggle
+        document.getElementById('menu-icon').addEventListener('click', () => {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        });
+
+        // Lazy Loading for Images
         document.addEventListener('DOMContentLoaded', () => {
-            const swiper = new Swiper('.swiper', {
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                autoplay: {
-                    delay: 3000,
-                },
+            const lazyImages = document.querySelectorAll('.lazy-load');
+            lazyImages.forEach(img => {
+                img.src = img.dataset.src;
             });
         });
     </script>

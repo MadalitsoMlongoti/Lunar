@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lunar Gold Art: Creativity and innovation in art and entertainment. Explore our visual arts, performances, multimedia, and workshops.">
-    <meta name="keywords" content="art, creativity, visual arts, performing arts, multimedia, workshops">
-    <meta name="author" content="Lunar Gold Art">
     <title>Lunar Gold Art</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <header>
         <div class="container">
-            <img src="images/lunar2.png" alt="Lunar Gold Art Logo" style="width: 250px; height: 150px;">
+            <img src="images/lunar2.png" alt="Lunar Gold Art Logo" width="250" height="150">
             <h1>Lunar Gold Art</h1>
             <p>Where creativity meets innovation in art and entertainment.</p>
             <nav>
@@ -44,62 +43,35 @@
 
         <section id="portfolio" class="section">
             <h2>Portfolio</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="images/artwork1.jpg" alt="Abstract Painting" class="lightbox-trigger">
-                    <p>Abstract Painting - 2024</p>
+            <!-- Swiper Carousel -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/artwork1.jpg" alt="Artwork 1"></div>
+                    <div class="swiper-slide"><img src="images/artwork2.jpg" alt="Artwork 2"></div>
+                    <div class="swiper-slide"><img src="images/artwork3.jpg" alt="Artwork 3"></div>
+                    <div class="swiper-slide"><img src="images/performance1.jpg" alt="Theatre Performance"></div>
+                    <div class="swiper-slide"><img src="images/digitalart.jpg" alt="Digital Artwork"></div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/artwork2.jpg" alt="Sculpture" class="lightbox-trigger">
-                    <p>Sculpture - The Essence of Gold</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/performance1.jpg" alt="Theatre Performance" class="lightbox-trigger">
-                    <p>Theatre Performance - "Moonlit Dreams"</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/digitalart.jpg" alt="Digital Artwork" class="lightbox-trigger">
-                    <p>Digital Artwork - Fusion of Realities</p>
-                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </section>
-        
-        <!-- Lightbox Modal -->
-        <div id="lightbox" class="lightbox">
-            <span class="close">&times;</span>
-            <img class="lightbox-content" id="lightbox-img" src="" alt="Portfolio Item">
-        </div>
-        
-
-        <section id="testimonials" class="section">
-            <h2>What People Say</h2>
-            <blockquote id="testimonial-text">"Lunar Gold Art brought our vision to life! A truly inspiring team."</blockquote>
-            <p id="testimonial-author">- Alex Smith</p>
-        </section>
-        
 
         <section id="contact" class="section">
             <h2>Contact Us</h2>
-            <form action="submit_form.php" method="post">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <p>Phone/WhatsApp: +260971580718</p>
+            <p>Phone/WhatsApp: <a href="tel:+260971580718">+260971580718</a></p>
             <p>Email: <a href="mailto:Lunargoldart@gmail.com">Lunargoldart@gmail.com</a></p>
             <p>Follow us on:
                 <a href="https://www.facebook.com/profile.php?id=100088537986423&mibextid=ZbWKwL">
-                    <img class="social-icon" src="images/facebook-icon.png" alt="Facebook">Facebook
-                </a> |
+                    <img class="social-icon" src="images/facebook-icon.png" aria-label="Facebook">Facebook</a> |
+
                 <a href="https://www.instagram.com/lunargoldart/profilecard/?igsh=azd3M3h6MHVpb3dh">
-                    <img class="social-icon" src="images/instagram-icon.png" alt="Instagram">Instagram
-                </a> |
-                <a href="https://www.tiktok.com/@lunargoldart?_t=ZM-8t731TwNlws&_r=1">
-                    <img class="social-icon" src="images/tiktok-icon.png" alt="TikTok">TikTok
-                </a>
+                    <img class="social-icon" src="images/instagram-icon.png" aria-label="Instagram">Instagram</a> |
+                
+                    <a href="https://www.tiktok.com/@lunargoldart?_t=ZM-8t731TwNlws&_r=1"> 
+                    <img class="social-icon" src="images/tiktok-icon.png" aria-label="TikTok">TikTok</a>
             </p>
-            
         </section>
     </main>
 
@@ -107,9 +79,25 @@
         <p>&copy; 2025 Lunar Gold Art. All rights reserved.</p>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        console.log("Welcome to Lunar Gold Art!");
+        document.addEventListener('DOMContentLoaded', () => {
+            const swiper = new Swiper('.swiper', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 3000,
+                },
+            });
+        });
     </script>
-    <script src="script.js"></script>
 </body>
 </html>

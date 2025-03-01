@@ -1,75 +1,96 @@
-// Ensure the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Lunar Gold Art website is ready!');
 
-    // Lightbox Functionality
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const triggers = document.querySelectorAll(".lightbox-trigger");
-    const close = document.querySelector(".lightbox .close");
-
-    // Open Lightbox on Image Click
-    triggers.forEach(trigger => {
-        trigger.addEventListener("click", () => {
-            lightbox.style.display = "flex";
-            lightboxImg.src = trigger.src;
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
 
-    // Close Lightbox on Click
-    close.addEventListener("click", () => {
-        lightbox.style.display = "none";
+    // Lightbox functionality for gallery images
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    document.body.appendChild(lightbox);
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            lightbox.classList.add('active');
+            const img = document.createElement('img');
+            img.src = item.src;
+            img.alt = item.alt;
+            while (lightbox.firstChild) {
+                lightbox.removeChild(lightbox.firstChild);
+            }
+            lightbox.appendChild(img);
+        });
     });
 
-    // Close Lightbox on Outside Click
-    lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-            lightbox.style.display = "none";
-        }
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
     });
 
-    // Testimonials Array
-    const testimonials = [
-        { text: "Lunar Gold Art brought our vision to life! A truly inspiring team.", author: "- Alex Smith" },
-        { text: "Their creativity and professionalism are unmatched. Highly recommend!", author: "- Jessica Brown" },
-        { text: "A fantastic experience working with Lunar Gold Art. The results exceeded our expectations.", author: "- Michael Lee" },
-        { text: "Art and innovation at its finest. Can't wait to collaborate again!", author: "- Sarah Johnson" }
-    ];
+    // Basic form validation for a contact form (if added)
+    const contactForm = document.querySelector('#contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.querySelector('#name').value.trim();
+            const email = document.querySelector('#email').value.trim();
+            const message = document.querySelector('#message').value.trim();
+            let isValid = true;
 
-    // DOM Elements
-    const testimonialText = document.getElementById("testimonial-text");
-    const testimonialAuthor = document.getElementById("testimonial-author");
+            if (name === '') {
+                alert('Please enter your name.');
+                isValid = false;
+            }
 
-    // Current Testimonial Index
-    let currentTestimonial = 0;
+            if (email === '' || !validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                isValid = false;
+            }
 
-    // Function to Update Testimonial
-    function updateTestimonial() {
-        const { text, author } = testimonials[currentTestimonial];
-        testimonialText.textContent = text;
-        testimonialAuthor.textContent = author;
+            if (message === '') {
+                alert('Please enter your message.');
+                isValid = false;
+            }
 
-        // Move to the next testimonial or loop back to the first
-        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            if (isValid) {
+                alert('Thank you for contacting us! We will get back to you soon.');
+                contactForm.reset();
+            }
+        });
     }
 
-    // Change Testimonial Every 5 Seconds
-    setInterval(updateTestimonial, 5000);
-
-    function updateTestimonial() {
-        testimonialText.classList.remove("show");
-        testimonialAuthor.classList.remove("show");
-    
-        setTimeout(() => {
-            const { text, author } = testimonials[currentTestimonial];
-            testimonialText.textContent = text;
-            testimonialAuthor.textContent = author;
-    
-            testimonialText.classList.add("show");
-            testimonialAuthor.classList.add("show");
-    
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-        }, 500);
+    // Helper function to validate email
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
     }
-    
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const swiper = new Swiper('.swiper', {
+            loop: true, // Enable infinite looping
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000, // Auto-slide every 3 seconds
+            },
+        });
+    });
 });

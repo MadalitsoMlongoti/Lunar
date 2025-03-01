@@ -157,6 +157,8 @@ footer a:hover {
         height: 120px;
     }
 }
+
+/* Swiper Carousel */
 .swiper {
     width: 100%;
     max-width: 800px; /* Adjust as needed */
@@ -167,6 +169,13 @@ footer a:hover {
     width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .swiper {
+        max-width: 100%; /* Full width on smaller screens */
+    }
 }
 
 .swiper-button-next, .swiper-button-prev {

@@ -118,6 +118,7 @@ nav {
 }
 
 /* Services Section */
+/* Services Section */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -151,6 +152,29 @@ nav {
 .service-item p {
     font-size: 1rem;
     color: #ccc;
+    margin-bottom: 15px;
+}
+
+.service-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.service-item ul li {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-item ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
 }
 
 /* Portfolio Section */

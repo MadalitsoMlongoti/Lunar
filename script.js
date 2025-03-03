@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    document.getElementById('menu-icon').addEventListener('click', () => {
+        const navLinks = document.getElementById('nav-links');
+        navLinks.classList.toggle('active');
+    });
+
     // Lightbox functionality for gallery images
     const galleryItems = document.querySelectorAll('.gallery-item img');
     const lightbox = document.createElement('div');

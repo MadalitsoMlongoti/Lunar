@@ -25,9 +25,28 @@ body {
 
 /* Header */
 header {
-    background: var(--secondary-background);
+    background: #222; /* Dark background */
     padding: 10px 0;
+    position: sticky; /* Make the header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 150px; /* Adjust logo size */
+    height: auto;
+}
+
 
 header h1 {
     font-size: 2rem;
@@ -43,12 +62,11 @@ header img.logo {
 /* Navigation */
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 .menu-icon {
-    display: none;
+    display: none; /* Hide by default */
     flex-direction: column;
     cursor: pointer;
 }
@@ -56,8 +74,9 @@ nav {
 .bar {
     width: 25px;
     height: 3px;
-    background: var(--primary-color);
+    background: #f3d04d; /* Gold color */
     margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-links {
@@ -68,19 +87,69 @@ nav {
 }
 
 .nav-links li {
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: #f3d04d; /* Gold color */
     font-weight: bold;
-    transition: color 0.3s ease;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #f3d04d; /* Gold color */
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #fff;
+    color: #fff; /* White on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
+
+.nav-links a:hover::after {
+    width: 100%; /* Underline effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex; /* Show hamburger menu */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        right: 20px;
+        background: #222; /* Dark background */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+}
+
 
 /* Hero Section */
 .hero {

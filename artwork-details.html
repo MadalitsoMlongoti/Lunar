@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Details | Lunar Gold Art</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#artwork-gallery">Artwork Gallery</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Artwork Details Section -->
+    <section id="artwork-details" class="section">
+        <div class="container">
+            <h2 id="artwork-title"></h2>
+            <div class="gallery-item">
+                <img id="artwork-image" src="" alt="Artwork Image">
+                <div class="artwork-info">
+                    <p><strong>Artist:</strong> <span id="artwork-artist"></span></p>
+                    <p><strong>Medium:</strong> <span id="artwork-medium"></span></p>
+                    <p><strong>Dimensions:</strong> <span id="artwork-dimensions"></span></p>
+                    <p><strong>Description:</strong> <span id="artwork-description"></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lunar Gold Art. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to get URL parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                title: params.get('title'),
+                artist: params.get('artist'),
+                medium: params.get('medium'),
+                dimensions: params.get('dimensions'),
+                image: params.get('image'),
+                description: params.get('description')
+            };
+        }
+
+        // Populate the artwork details
+        window.onload = function() {
+            const artwork = getQueryParams();
+
+            if (artwork.title) document.getElementById("artwork-title").textContent = artwork.title;
+            if (artwork.artist) document.getElementById("artwork-artist").textContent = artwork.artist;
+            if (artwork.medium) document.getElementById("artwork-medium").textContent = artwork.medium;
+            if (artwork.dimensions) document.getElementById("artwork-dimensions").textContent = artwork.dimensions;
+            if (artwork.image) document.getElementById("artwork-image").src = "images/" + artwork.image;
+            if (artwork.description) document.getElementById("artwork-description").textContent = artwork.description;
+        };
+    </script>
+</body>
+</html>

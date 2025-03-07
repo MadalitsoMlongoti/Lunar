@@ -292,10 +292,6 @@ footer {
 footer p {
     margin: 0;
 }
-.portfolio-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(243, 208, 77, 0.3);
-}
 
 /* Search Bar Styling */
 .search-bar {
@@ -310,6 +306,7 @@ footer p {
     border-color: #e0b83d;
 
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     /* Header */
@@ -470,5 +467,95 @@ footer p {
     /* Contact Section */
     .social-links a {
         font-size: 1rem; /* Smaller icons for very small screens */
+    }
+}
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* Search Bar */
+.search-bar {
+    margin-left: auto;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    border-color: #e0b83d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Show Hamburger Menu Icon */
+    .menu-icon {
+        display: flex;
+    }
+
+    /* Hide Navigation Links by Default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        right: 20px;
+        background: var(--secondary-background);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show navigation links when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* Adjust Search Bar for Mobile */
+    .search-bar {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 100%;
     }
 }

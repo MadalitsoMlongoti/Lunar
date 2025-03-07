@@ -15,23 +15,18 @@
     <header>
         <div class="container">
             <nav>
-                <div class="menu-icon" id="menu-icon">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <ul class="nav-links" id="nav-links">
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#artwork-gallery">Artwork Gallery</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
                 <!-- Search Bar -->
-                <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Search by piece name, artist, or medium..." onkeyup="searchArtworks()">
-                </div>
+    <section class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by piece name, artist, or medium..." onkeyup="searchArtworks()">
             </nav>
         </div>
     </header>
+
 
     <!-- Artwork Gallery -->
     <section id="all-artworks" class="section">
@@ -107,13 +102,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Hamburger Menu Toggle
-        document.getElementById('menu-icon').addEventListener('click', () => {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.classList.toggle('active');
-        });
-
-        // Search Functionality
         function searchArtworks() {
             let input = document.getElementById("searchInput").value.toLowerCase();
             let artworks = document.getElementsByClassName("gallery-item");

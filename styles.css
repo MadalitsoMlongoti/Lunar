@@ -260,6 +260,12 @@ nav {
     background: #e0b83d;
 }
 
+.gallery-item:hover{
+
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(243, 208, 77, 0.3);
+}
+
 /* Contact Section */
 .social-links {
     margin-top: 20px;

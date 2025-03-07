@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Artworks - Lunar Gold Art</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#artwork-gallery">Artwork Gallery</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <!-- Search Bar -->
+    <section class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by piece name, artist, or medium..." onkeyup="searchArtworks()">
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Artwork Gallery -->
+    <section id="all-artworks" class="section">
+        <div class="container">
+            <h2>All Artworks</h2>
+            <div class="gallery-grid" id="artworkGrid">
+                <!-- Artwork Items -->
+                <div class="gallery-item" data-name="Abstract Painting" data-artist="John Doe" data-medium="Oil on Canvas">
+                    <img src="images/artwork1.jpg" alt="Abstract Painting">
+                    <div class="overlay">
+                        <p><strong>Title:</strong> Abstract Painting - 2024</p>
+                        <p><strong>Artist:</strong> John Doe</p>
+                        <p><strong>Medium:</strong> Oil on Canvas</p>
+                        <a href="artwork1-details.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-name="Sculpture - The Essence of Gold" data-artist="Jane Smith" data-medium="Bronze">
+                    <img src="images/artwork2.jpg" alt="Sculpture">
+                    <div class="overlay">
+                        <p><strong>Title:</strong> Sculpture - The Essence of Gold</p>
+                        <p><strong>Artist:</strong> Jane Smith</p>
+                        <p><strong>Medium:</strong> Bronze</p>
+                        <a href="artwork2-details.html" class="btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-name="Moonlit Dreams" data-artist="Michael Brown" data-medium="Performance Art">
+                    <img src="images/performance1.jpg" alt="Theatre Performance">
+                    <div class="overlay">
+                        <p><strong>Title:</strong> Theatre Performance - "Moonlit Dreams"</p>
+                        <p><strong>Artist:</strong> Michael Brown</p>
+                        <p><strong>Medium:</strong> Performance Art</p>
+                        <a href="performance1-details.html" class="btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-name="Fusion of Realities" data-artist="Sophia Green" data-medium="Digital Art">
+                    <img src="images/digitalart.jpg" alt="Digital Artwork">
+                    <div class="overlay">
+                        <p><strong>Title:</strong> Digital Artwork - Fusion of Realities</p>
+                        <p><strong>Artist:</strong> Sophia Green</p>
+                        <p><strong>Medium:</strong> Digital Art</p>
+                        <a href="digitalart-details.html" class="btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Add more artwork items here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Phone/WhatsApp: <a href="tel:+260971580718">+260971580718</a></p>
+            <p>Email: <a href="mailto:Lunargoldart@gmail.com">Lunargoldart@gmail.com</a></p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100088537986423&mibextid=ZbWKwL" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/lunargoldart/profilecard/?igsh=azd3M3h6MHVpb3dh" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@lunargoldart?_t=ZM-8t731TwNlws&_r=1" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lunar Gold Art. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function searchArtworks() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let artworks = document.getElementsByClassName("gallery-item");
+
+            for (let i = 0; i < artworks.length; i++) {
+                let name = artworks[i].getAttribute("data-name").toLowerCase();
+                let artist = artworks[i].getAttribute("data-artist").toLowerCase();
+                let medium = artworks[i].getAttribute("data-medium").toLowerCase();
+
+                if (name.includes(input) || artist.includes(input) || medium.includes(input)) {
+                    artworks[i].style.display = "block";
+                } else {
+                    artworks[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

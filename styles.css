@@ -310,3 +310,165 @@ footer p {
     border-color: #e0b83d;
 
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        padding: 10px 0;
+    }
+
+    .logo {
+        width: 150px; /* Smaller logo for mobile */
+    }
+
+    .logo1 {
+        width: 100px; /* Smaller logo for mobile */
+        height: auto;
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        right: 20px;
+        background: var(--secondary-background);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+
+    /* Search Bar */
+    .search-bar {
+        margin-left: 0; /* Reset margin for mobile */
+        margin-top: 10px; /* Add space above the search bar */
+        width: 100%; /* Full width for mobile */
+    }
+
+    .search-bar input {
+        width: 100%; /* Full width for mobile */
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+
+    /* Sections */
+    .section {
+        padding: 40px 0; /* Reduced padding for mobile */
+    }
+
+    .section h2 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    /* Services Section */
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller grid items for mobile */
+    }
+
+    .service-item {
+        padding: 15px; /* Reduced padding for mobile */
+    }
+
+    .service-item h3 {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+
+    .service-item p {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+
+    /* Artwork Gallery Section */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller grid items for mobile */
+    }
+
+    .gallery-item .overlay p {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .gallery-item .overlay .btn {
+        padding: 6px 12px; /* Smaller button for mobile */
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+
+    /* Contact Section */
+    .social-links a {
+        font-size: 1.2rem; /* Smaller icons for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header */
+    .logo {
+        width: 120px; /* Even smaller logo for very small screens */
+    }
+
+    .logo1 {
+        width: 80px; /* Even smaller logo for very small screens */
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 1.75rem; /* Smaller font size for very small screens */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Smaller font size for very small screens */
+    }
+
+    /* Sections */
+    .section h2 {
+        font-size: 1.75rem; /* Smaller font size for very small screens */
+    }
+
+    /* Services Section */
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Even smaller grid items for very small screens */
+    }
+
+    .service-item h3 {
+        font-size: 1rem; /* Smaller font size for very small screens */
+    }
+
+    .service-item p {
+        font-size: 0.8rem; /* Smaller font size for very small screens */
+    }
+
+    /* Artwork Gallery Section */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Even smaller grid items for very small screens */
+    }
+
+    .gallery-item .overlay p {
+        font-size: 0.9rem; /* Smaller font size for very small screens */
+    }
+
+    .gallery-item .overlay .btn {
+        padding: 5px 10px; /* Smaller button for very small screens */
+        font-size: 0.8rem; /* Smaller font size for very small screens */
+    }
+
+    /* Contact Section */
+    .social-links a {
+        font-size: 1rem; /* Smaller icons for very small screens */
+    }
+}

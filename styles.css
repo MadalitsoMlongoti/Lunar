@@ -291,3 +291,32 @@ footer {
 footer p {
     margin: 0;
 }
+/* Search Bar Styles */
+.search-bar {
+    width: 200px; /* Default width for desktop */
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background: var(--secondary-background);
+    color: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.search-bar:focus {
+    width: 250px; /* Expand width on focus for desktop */
+    outline: none;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 120px; /* Reduced width for mobile */
+        padding: 8px; /* Reduced padding for mobile */
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+
+    .search-bar:focus {
+        width: 150px; /* Slightly expand width on focus for mobile */
+    }
+}

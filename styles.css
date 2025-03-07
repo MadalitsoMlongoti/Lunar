@@ -175,8 +175,9 @@ nav {
     visibility: hidden; /* Hide from the DOM */
 }
 
-/* Show Service List on Hover */
-.service-item:hover .service-list {
+/* Show Service List on Hover or when active */
+.service-item:hover .service-list,
+.service-item.active .service-list {
     bottom: 0; /* Slide up into view */
     opacity: 1; /* Fully visible */
     visibility: visible; /* Show in the DOM */

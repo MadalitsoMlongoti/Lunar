@@ -125,9 +125,15 @@ nav {
 /* Services Section */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
     margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
 
 .service-item {
@@ -159,49 +165,6 @@ nav {
     font-size: 1rem;
     color: #ccc;
     margin-bottom: 15px;
-}
-
-/* Service List (Hidden by Default) */
-.service-list {
-    position: absolute;
-    bottom: -100%; /* Hide the list below the service item */
-    left: 0;
-    width: 100%;
-    background: var(--secondary-background);
-    padding: 20px;
-    border-radius: 10px;
-    transition: bottom 0.3s ease;
-    opacity: 0; /* Start fully transparent */
-    visibility: hidden; /* Hide from the DOM */
-}
-
-/* Show Service List on Hover */
-.service-item:hover .service-list {
-    bottom: 0; /* Slide up into view */
-    opacity: 1; /* Fully visible */
-    visibility: visible; /* Show in the DOM */
-}
-
-.service-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-.service-list ul li {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 20px;
-}
-
-.service-list ul li::before {
-    content: "•";
-    color: var(--primary-color);
-    position: absolute;
-    left: 0;
 }
 
 /* Artwork Gallery Section */
@@ -260,7 +223,6 @@ nav {
 }
 
 .gallery-item:hover{
-
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(243, 208, 77, 0.3);
 }
@@ -291,22 +253,4 @@ footer {
 
 footer p {
     margin: 0;
-}
-.portfolio-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(243, 208, 77, 0.3);
-}
-
-/* Search Bar Styling */
-.search-bar {
-    margin-left: auto;
-}
-
-.search-bar input {
-    padding: 8px;
-    border: 3px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    border-color: #e0b83d;
-
 }
